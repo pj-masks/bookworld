@@ -1,0 +1,15 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+datasource:
+  bookworld:
+      url: jdbc:oracle:thin:@xe
+      username: bookworld
+      password: bookworld
+      driver-class-name: oracle.jdbc.OracleDriver
+      test-on-borrow: true
+      validation-query: SELECT 1 FROM dual
+  

@@ -45,3 +45,22 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.classpath
+author/.gradle/2.14.1/taskArtifacts/cache.properties
+*.lock
+*.bin
+*.project
+author/.settings/org.eclipse.jdt.core.prefs
+*.prefs
+*.class
+author/build/resources/main/application.yml.1234
+*.jar
+author/gradle/wrapper/gradle-wrapper.properties
+author/gradlew
+*.bat
+*.1234
+author/target/classes/application.properties
+author/target/classes/application.yml
+*.lst
+BookWorldDomain.txt
+*.sql
