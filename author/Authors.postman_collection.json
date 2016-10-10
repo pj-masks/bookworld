@@ -1,0 +1,30 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Authors",
+		"_postman_id": "6cae8a0f-c909-ba24-ad5a-47b9293d5636",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All authors",
+			"request": {
+				"url": "http://localhost:8484/authors",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"vehicleType\":\"CAR\",\r\n   \"fuelType\":\"PETROL\",\r\n   \"ac\":true,\r\n   \"itenerary\":\"Bangalore-Chennai-Bangalore\"\r\n}\r\n   \r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
