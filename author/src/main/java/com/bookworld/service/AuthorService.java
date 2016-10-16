@@ -22,4 +22,8 @@ public class AuthorService {
 		return authorRepository.getAuthors();
 	}
 
+	public void create(Author author) {
+		authorRepository.create(author);
+	}
+
 }

@@ -6,6 +6,9 @@ public class Author {
 	private String firstName;
 	private String lastName;
 
+	public Author() {
+	}
+
 	public Author(Integer authorId, String firstName, String lastName) {
 		this.authorId = authorId;
 		this.firstName = firstName;
