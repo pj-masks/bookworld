@@ -64,3 +64,9 @@ author/target/classes/application.yml
 *.lst
 BookWorldDomain.txt
 *.sql
+*.jar
+*.jar
+*.jar
+book/gradle/wrapper/gradle-wrapper.jar
+book/gradle/wrapper/gradle-wrapper.properties
+*.jar

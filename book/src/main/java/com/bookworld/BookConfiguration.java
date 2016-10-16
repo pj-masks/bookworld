@@ -1,21 +1,24 @@
 package com.bookworld;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.hibernate.SessionFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 
 import oracle.jdbc.pool.OracleDataSource;
 
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties("oracle")
-public class AuthorConfiguration {
+public class BookConfiguration {
 	public String getUsername() {
 		return username;
 	}
@@ -55,9 +58,26 @@ public class AuthorConfiguration {
 		return dataSource;
 	}
 
+	/*
+	 * @Bean public JdbcTemplate jdbcTemplate(DataSource dataSource) { return
+	 * new JdbcTemplate(dataSource); }
+	 */
+
 	@Bean
-	public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource dataSource) {
-		return new NamedParameterJdbcTemplate(dataSource);
+	public SessionFactory sessionFactoryBean(DataSource dataSource) {
+		try {
+			LocalSessionFactoryBean lsfb = new LocalSessionFactoryBean();
+			lsfb.setDataSource(dataSource);
+			lsfb.setPackagesToScan("com.bookworld.domain");
+			Properties props = new Properties();
+			props.setProperty("dialect", "org.hibernate.dialect.Oracle10gDialect");
+			lsfb.setHibernateProperties(props);
+			lsfb.afterPropertiesSet();
+			SessionFactory object = lsfb.getObject();
+			return object;
+		} catch (IOException e) {
+			return null;
+		}
 	}
 
 }

@@ -6,4 +6,6 @@ import com.bookworld.domain.Author;
 
 public interface AuthorRepository {
 	Collection<Author> getAuthors();
+
+	void create(Author author);
 }
