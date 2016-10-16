@@ -16,6 +16,11 @@ import oracle.jdbc.pool.OracleDataSource;
 @EnableConfigurationProperties
 @ConfigurationProperties("oracle")
 public class AuthorConfiguration {
+	
+	private String username;
+	private String password;
+	private String url;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -40,9 +45,6 @@ public class AuthorConfiguration {
 		this.url = url;
 	}
 
-	private String username;
-	private String password;
-	private String url;
 
 	@Bean
 	DataSource dataSource() throws SQLException {
